@@ -460,11 +460,13 @@
                     </div>
                 </div>
             </div>
-            <form class="c-form reveal" onsubmit="handleForm(event)">
-                <input type="text" placeholder="Votre nom" required>
-                <input type="tel" placeholder="Votre téléphone" required>
-                <input type="email" placeholder="Votre email">
-                <textarea placeholder="Décrivez votre problème..." required></textarea>
+            <form class="c-form reveal" action="https://formspree.io/f/mqednadr" method="POST">
+                <input type="text" name="nom" placeholder="Votre nom" required>
+                <input type="tel" name="telephone" placeholder="Votre téléphone" required>
+                <input type="email" name="email" placeholder="Votre email">
+                <textarea name="message" placeholder="Décrivez votre problème..." required></textarea>
+                <input type="hidden" name="_subject" value="Nouveau message depuis le site Jonathan PC Service">
+                <input type="hidden" name="_next" value="https://jonathan-pc-service-4p5arvczh-geekzones-projects.vercel.app/#contact">
                 <button type="submit" class="btn btn-p">Envoyer le message</button>
             </form>
         </div>
