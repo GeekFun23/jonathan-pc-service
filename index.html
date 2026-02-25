@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jonathan PC Service — Réparation informatique à domicile | Guéret (23)</title>
+    <meta name="description" content="Dépannage, réparation et entretien informatique à domicile autour de Guéret, Creuse (23). Montage PC, upgrade SSD, installation Windows. Appelez le 06 41 99 56 70.">
+    <meta name="keywords" content="réparation ordinateur, dépannage informatique, Guéret, Creuse, domicile, montage PC, SSD, Windows">
+    <meta property="og:title" content="Jonathan PC Service — Réparation informatique à domicile">
+    <meta property="og:description" content="Dépannage et réparation informatique à domicile autour de Guéret (23). Tarifs transparents.">
+    <meta property="og:image" content="/logo.png">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --or: #FF6A00;
+            --or-l: #FF8C33;
+            --or-d: #CC5500;
+            --or-glow: rgba(255,106,0,.25);
+            --bk: #080808;
+            --bk1: #101010;
+            --bk2: #181818;
+            --bk3: #222;
+            --wh: #EAEAEA;
+            --gr: #777;
+            --gr-l: #AAA;
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Exo 2',sans-serif;background:var(--bk);color:var(--wh);overflow-x:hidden}
+
+        /* === BOTTOM BAR === */
+        .bottom-bar{position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(10,10,10,.96);backdrop-filter:blur(14px);border-top:2px solid var(--or);padding:.5rem 1rem;display:flex;justify-content:center;align-items:center;gap:.3rem;flex-wrap:wrap}
+        .bottom-bar a,.bottom-bar span{display:inline-flex;align-items:center;gap:.4rem;color:var(--gr-l);text-decoration:none;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:.85rem;padding:.4rem .8rem;transition:.3s;white-space:nowrap}
+        .bottom-bar a:hover{color:var(--or)}
+        .bb-sep{color:var(--bk3);font-size:.7rem;padding:0 .1rem}
+        .bb-icon{font-size:1.1rem}
+        .bb-wa{color:#25D366!important}
+        .bb-wa:hover{color:#128C7E!important}
+        body{padding-bottom:52px}
+        @media(max-width:768px){
+            .bottom-bar{gap:.1rem;padding:.4rem .5rem}
+            .bottom-bar a,.bottom-bar span{font-size:.75rem;padding:.3rem .5rem}
+            .bb-sep{display:none}
+            .bottom-bar{justify-content:space-around}
+            body{padding-bottom:48px}
+        }
+
+        /* === SCROLLBAR === */
+        ::-webkit-scrollbar{width:6px}
+        ::-webkit-scrollbar-track{background:var(--bk)}
+        ::-webkit-scrollbar-thumb{background:var(--or-d);border-radius:3px}
+
+        /* === NAV === */
+        nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(8,8,8,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--bk3);transition:.3s}
+        nav.scrolled{box-shadow:0 0 40px rgba(255,106,0,.08)}
+        .nav-c{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:.7rem 2rem}
+        .nav-logo img{height:48px;filter:drop-shadow(0 0 8px rgba(255,106,0,.2))}
+        .nav-links{display:flex;list-style:none;gap:2rem}
+        .nav-links a{color:var(--gr-l);text-decoration:none;font-family:'Rajdhani',sans-serif;font-weight:600;font-size:.95rem;text-transform:uppercase;letter-spacing:1.5px;transition:.3s;position:relative}
+        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--or);transition:.3s}
+        .nav-links a:hover{color:var(--or)}
+        .nav-links a:hover::after{width:100%}
+        .nav-tel{color:var(--or);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.1rem;text-decoration:none;letter-spacing:1px}
+        .hamburger{display:none;flex-direction:column;cursor:pointer;gap:5px;padding:5px}
+        .hamburger span{width:26px;height:2.5px;background:var(--or);transition:.3s;border-radius:2px}
+        .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .hamburger.open span:nth-child(2){opacity:0}
+        .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+        /* === HERO === */
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:6rem 2rem 2rem}
+        .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(255,106,0,.07),transparent 60%),radial-gradient(ellipse at 70% 70%,rgba(255,106,0,.04),transparent 50%)}
+        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,106,0,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,106,0,.025) 1px,transparent 1px);background-size:50px 50px;animation:gm 25s linear infinite}
+        @keyframes gm{to{transform:translate(50px,50px)}}
+        .hero-particles{position:absolute;inset:0;overflow:hidden}
+        .particle{position:absolute;width:2px;height:2px;background:var(--or);border-radius:50%;opacity:0;animation:float 8s infinite}
+        @keyframes float{0%{opacity:0;transform:translateY(100vh)}50%{opacity:.6}100%{opacity:0;transform:translateY(-20px)}}
+        .hero-content{position:relative;z-index:2;max-width:900px}
+        .hero-logo{width:420px;max-width:85%;margin-bottom:2rem;animation:fadeDown .8s ease;filter:drop-shadow(0 0 50px rgba(255,106,0,.25))}
+        .hero-tag{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:500;color:var(--gr-l);margin-bottom:.5rem;animation:fadeUp .8s ease .15s both}
+        .hero-loc{font-family:'Rajdhani',sans-serif;font-size:1.15rem;color:var(--or);font-weight:600;margin-bottom:2.5rem;animation:fadeUp .8s ease .3s both;letter-spacing:1px}
+        .hero-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease .45s both}
+        @keyframes fadeDown{from{opacity:0;transform:translateY(-25px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+
+        /* === BUTTONS === */
+        .btn{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.05rem;text-transform:uppercase;letter-spacing:2px;padding:.9rem 2.2rem;border:none;cursor:pointer;text-decoration:none;transition:.3s;display:inline-block}
+        .btn-p{background:var(--or);color:var(--bk);clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+        .btn-p:hover{background:var(--or-l);transform:translateY(-3px);box-shadow:0 8px 35px var(--or-glow)}
+        .btn-s{background:transparent;color:var(--or);border:2px solid var(--or);clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%)}
+        .btn-s:hover{background:rgba(255,106,0,.08);transform:translateY(-3px)}
+
+        /* === STAR OFFERS === */
+        .star-offers{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem;animation:fadeUp .8s ease .6s both;width:100%;max-width:900px}
+        .star-card{background:rgba(255,106,0,.06);border:2px solid var(--or);padding:1.5rem 1.2rem;text-align:center;position:relative;transition:.4s;overflow:hidden}
+        .star-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,106,0,.1),transparent 60%);opacity:0;transition:.4s}
+        .star-card:hover::before{opacity:1}
+        .star-card:hover{transform:translateY(-6px);box-shadow:0 12px 50px rgba(255,106,0,.2);border-color:var(--or-l)}
+        .star-badge{position:absolute;top:-1px;right:-1px;background:var(--or);color:var(--bk);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:1.5px;padding:.3rem .8rem}
+        .star-ico{font-size:2rem;margin-bottom:.5rem;position:relative}
+        .star-name{font-family:'Rajdhani',sans-serif;font-size:1.05rem;font-weight:700;text-transform:uppercase;margin-bottom:.3rem;color:var(--wh);position:relative}
+        .star-desc{color:var(--gr);font-size:.8rem;line-height:1.5;margin-bottom:.8rem;position:relative}
+        .star-price{font-family:'Rajdhani',sans-serif;font-size:2rem;font-weight:700;color:var(--or);position:relative;text-shadow:0 0 20px rgba(255,106,0,.3)}
+        .star-price small{font-size:.75rem;color:var(--gr-l);font-weight:400;display:block;margin-top:.1rem}
+        @keyframes starPulse{0%,100%{box-shadow:0 0 15px rgba(255,106,0,.15)}50%{box-shadow:0 0 30px rgba(255,106,0,.3)}}
+        .star-card.featured{animation:starPulse 3s ease infinite}
+        @media(max-width:768px){
+            .star-offers{grid-template-columns:1fr;max-width:350px;margin:2rem auto 0}
+            .star-price{font-size:1.6rem}
+        }
+
+        /* === SECTIONS === */
+        section{padding:5rem 2rem}
+        .sc{max-width:1200px;margin:0 auto}
+        .st{font-family:'Rajdhani',sans-serif;font-size:2.6rem;font-weight:700;text-align:center;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:3px}
+        .st span{color:var(--or)}
+        .ss{text-align:center;color:var(--gr);font-size:1.05rem;margin-bottom:3rem}
+        .sd{width:60px;height:3px;background:var(--or);margin:0 auto 3rem}
+
+        /* === SERVICES === */
+        #services{background:var(--bk1);position:relative}
+        #services::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent)}
+        .srv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+        .srv{background:var(--bk2);border:1px solid var(--bk3);padding:1.8rem;position:relative;transition:.4s;overflow:hidden}
+        .srv::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--or);transform:scaleX(0);transition:.4s}
+        .srv:hover::before{transform:scaleX(1)}
+        .srv:hover{border-color:rgba(255,106,0,.2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.6)}
+        .srv-ico{font-size:2.2rem;margin-bottom:.8rem}
+        .srv-name{font-family:'Rajdhani',sans-serif;font-size:1.2rem;font-weight:700;text-transform:uppercase;margin-bottom:.4rem}
+        .srv-desc{color:var(--gr);font-size:.9rem;line-height:1.6;margin-bottom:1rem}
+        .srv-price{font-family:'Rajdhani',sans-serif;font-size:1.8rem;font-weight:700;color:var(--or)}
+        .srv-price small{font-size:.85rem;color:var(--gr);font-weight:400}
+
+        /* === LAPTOP NOTICE === */
+        .laptop-notice{margin-top:2rem;background:rgba(255,106,0,.05);border:1px solid rgba(255,106,0,.3);padding:1.5rem 2rem;display:flex;align-items:flex-start;gap:1rem}
+        .laptop-notice .ln-ico{font-size:1.8rem;flex-shrink:0;margin-top:.1rem}
+        .laptop-notice h4{font-family:'Rajdhani',sans-serif;font-weight:700;text-transform:uppercase;color:var(--or);margin-bottom:.3rem;font-size:1.05rem}
+        .laptop-notice p{color:var(--gr-l);font-size:.9rem;line-height:1.6}
+        .laptop-notice strong{color:var(--wh)}
+        @media(max-width:768px){.laptop-notice{flex-direction:column;gap:.5rem;padding:1.2rem}}
+
+        /* === ABOUT === */
+        #about{background:var(--bk)}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .about-text p{color:var(--gr-l);line-height:1.8;margin-bottom:1rem;font-size:1rem}
+        .about-text strong{color:var(--or)}
+        .stats{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+        .stat{background:var(--bk2);border:1px solid var(--bk3);padding:1.8rem;text-align:center;transition:.3s}
+        .stat:hover{border-color:var(--or);box-shadow:0 0 25px var(--or-glow)}
+        .stat-n{font-family:'Rajdhani',sans-serif;font-size:2.2rem;font-weight:700;color:var(--or)}
+        .stat-l{font-size:.85rem;color:var(--gr);text-transform:uppercase;letter-spacing:1px}
+
+        /* === ZONE === */
+        #zone{background:var(--bk1);position:relative}
+        #zone::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--or),transparent)}
+        .zone-c{text-align:center;max-width:700px;margin:0 auto}
+        .zone-c p{color:var(--gr-l);font-size:1.05rem;line-height:1.8;margin-bottom:1.5rem}
+        .zone-badge{display:inline-block;background:rgba(255,106,0,.08);border:1px solid var(--or);padding:.8rem 2rem;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:1.15rem;color:var(--or);text-transform:uppercase;letter-spacing:2px;margin-top:.5rem}
+        .zone-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-top:2rem}
+        .zone-tag{background:var(--bk2);border:1px solid var(--bk3);padding:.5rem 1.2rem;font-size:.9rem;color:var(--gr-l);font-family:'Rajdhani',sans-serif;font-weight:500;transition:.3s}
+        .zone-tag:hover{border-color:var(--or);color:var(--or)}
+
+        /* === CONTACT === */
+        #contact{background:var(--bk)}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+        .contact-card{background:var(--bk2);border:1px solid var(--bk3);padding:2.5rem}
+        .contact-item{display:flex;align-items:center;gap:1.2rem;margin-bottom:1.8rem}
+        .contact-item:last-child{margin-bottom:0}
+        .ci-icon{width:48px;height:48px;background:rgba(255,106,0,.08);border:1px solid var(--or);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+        .ci-detail h4{font-family:'Rajdhani',sans-serif;font-weight:700;text-transform:uppercase;margin-bottom:.15rem;font-size:.95rem}
+        .ci-detail p,.ci-detail a{color:var(--gr-l);text-decoration:none;font-size:1rem}
+        .ci-detail a:hover{color:var(--or)}
+        .c-form{display:flex;flex-direction:column;gap:1rem}
+        .c-form input,.c-form textarea{background:var(--bk2);border:1px solid var(--bk3);color:var(--wh);padding:.9rem 1rem;font-family:'Exo 2',sans-serif;font-size:.95rem;transition:.3s}
+        .c-form input:focus,.c-form textarea:focus{outline:none;border-color:var(--or)}
+        .c-form textarea{min-height:140px;resize:vertical}
+        .c-form .btn{align-self:flex-start}
+
+        /* === FOOTER === */
+        footer{background:var(--bk1);border-top:1px solid var(--bk3);padding:3rem 2rem 1.5rem}
+        .ft-c{max-width:1200px;margin:0 auto}
+        .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-bottom:2rem}
+        .ft-brand img{height:55px;margin-bottom:.8rem}
+        .ft-brand p{color:var(--gr);line-height:1.6;font-size:.9rem}
+        .ft-links h4{font-family:'Rajdhani',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:1rem;color:var(--or);font-size:1rem}
+        .ft-links ul{list-style:none}
+        .ft-links li{margin-bottom:.5rem}
+        .ft-links a{color:var(--gr);text-decoration:none;transition:.3s;font-size:.9rem}
+        .ft-links a:hover{color:var(--or)}
+        .ft-bottom{border-top:1px solid var(--bk3);padding-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+        .ft-bottom p{color:var(--gr);font-size:.8rem}
+        .ft-legal{display:flex;gap:1.5rem}
+        .ft-legal a{color:var(--gr);text-decoration:none;font-size:.8rem;transition:.3s}
+        .ft-legal a:hover{color:var(--or)}
+
+        /* === MODAL === */
+        .modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:2000;align-items:center;justify-content:center;padding:2rem}
+        .modal-bg.active{display:flex}
+        .modal{background:var(--bk2);border:1px solid var(--bk3);max-width:800px;width:100%;max-height:80vh;overflow-y:auto;padding:2.5rem;position:relative}
+        .modal-x{position:absolute;top:1rem;right:1.2rem;background:none;border:none;color:var(--gr);font-size:1.8rem;cursor:pointer;transition:.3s}
+        .modal-x:hover{color:var(--or)}
+        .modal h2{font-family:'Rajdhani',sans-serif;font-size:1.8rem;color:var(--or);margin-bottom:1.2rem;text-transform:uppercase}
+        .modal h3{font-family:'Rajdhani',sans-serif;color:var(--wh);margin:1.3rem 0 .6rem;font-size:1.1rem}
+        .modal p,.modal li{color:var(--gr-l);line-height:1.7;margin-bottom:.6rem;font-size:.9rem}
+        .modal ul{padding-left:1.2rem;margin-bottom:.8rem}
+
+        /* === REVEAL === */
+        .reveal{opacity:0;transform:translateY(30px);transition:.7s ease}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+
+        /* === RESPONSIVE === */
+        @media(max-width:768px){
+            .nav-links,.nav-tel{display:none}
+            .hamburger{display:flex}
+            .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(8,8,8,.98);padding:1.5rem 2rem;gap:1.2rem;border-bottom:1px solid var(--bk3)}
+            .hero-tag{font-size:1.15rem}
+            .st{font-size:1.8rem}
+            .about-grid,.contact-grid,.ft-grid{grid-template-columns:1fr}
+            .srv-grid{grid-template-columns:1fr}
+            .hero-logo{width:280px}
+            .hero{padding:5rem 1.5rem 2rem}
+            section{padding:3.5rem 1.5rem}
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+    <div class="nav-c">
+        <a href="#" class="nav-logo"><img src="/logo.png" alt="Jonathan PC Service"></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#zone">Zone</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:0641995670" class="nav-tel">📞 06 41 99 56 70</a>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+        <img src="/logo.png" alt="Jonathan PC Service" class="hero-logo">
+        <p class="hero-tag">Dépannage & Réparation Informatique à Domicile</p>
+        <p class="hero-loc">📍 Guéret & alentours — Creuse (23)</p>
+        <div class="hero-btns">
+            <a href="tel:0641995670" class="btn btn-p">📞 Appeler</a>
+            <a href="#services" class="btn btn-s">Nos tarifs</a>
+        </div>
+
+        <!-- STAR OFFERS -->
+        <div class="star-offers">
+            <div class="star-card">
+                <span class="star-badge">⭐ Offre Star</span>
+                <div class="star-ico">🔍</div>
+                <div class="star-name">Dépannage + Diagnostic</div>
+                <div class="star-desc">Analyse complète + devis avant réparation</div>
+                <div class="star-price">59,99 €</div>
+            </div>
+            <div class="star-card featured">
+                <span class="star-badge">⭐ Populaire</span>
+                <div class="star-ico">🧹</div>
+                <div class="star-name">Entretien PC Complet</div>
+                <div class="star-desc">Nettoyage + pâte thermique + optimisation</div>
+                <div class="star-price">125,99 €</div>
+            </div>
+            <div class="star-card">
+                <span class="star-badge">⭐ Best-seller</span>
+                <div class="star-ico">⚡</div>
+                <div class="star-name">Upgrade SSD 500 Go</div>
+                <div class="star-desc">SSD inclus + Windows + nettoyage + pâte thermique</div>
+                <div class="star-price">185,99 € <small>SSD inclus</small></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <div class="sc">
+        <h2 class="st reveal">Nos <span>Services</span></h2>
+        <p class="ss reveal">Des prestations professionnelles à tarifs transparents, directement chez vous.</p>
+        <div class="sd reveal"></div>
+        <div class="srv-grid">
+            <div class="srv reveal">
+                <div class="srv-ico">🔍</div>
+                <h3 class="srv-name">Dépannage + Diagnostic</h3>
+                <p class="srv-desc">Analyse complète de votre PC et devis détaillé avant toute réparation. Pas de surprise.</p>
+                <div class="srv-price">59,99 €</div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">🧹</div>
+                <h3 class="srv-name">Entretien PC Complet</h3>
+                <p class="srv-desc">Nettoyage complet, remplacement pâte thermique Thermal Grizzly et optimisation système.</p>
+                <div class="srv-price">125,99 €</div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">⚡</div>
+                <h3 class="srv-name">Upgrade SSD 500 Go</h3>
+                <p class="srv-desc">SSD inclus + installation/copie Windows + nettoyage + pâte thermique. PC ultra rapide garanti.</p>
+                <div class="srv-price">185,99 € <small>SSD inclus</small></div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">💿</div>
+                <h3 class="srv-name">Installation Windows 10/11</h3>
+                <p class="srv-desc">Installation propre de Windows 10 ou 11, mise à jour et configuration complète.</p>
+                <div class="srv-price">65,99 €</div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">🎮</div>
+                <h3 class="srv-name">Montage PC Gamer</h3>
+                <p class="srv-desc">Assemblage soigné de votre configuration gaming. Câble management et tests inclus.</p>
+                <div class="srv-price">125,99 € <small>composants non inclus</small></div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">🖥️</div>
+                <h3 class="srv-name">Montage PC Bureautique</h3>
+                <p class="srv-desc">Montage complet de votre PC de bureau ou de travail. Configuration et tests inclus.</p>
+                <div class="srv-price">115,99 € <small>composants non inclus</small></div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">🌡️</div>
+                <h3 class="srv-name">Changement Pâte Thermique</h3>
+                <p class="srv-desc">Remplacement par de la pâte thermique haute gamme Thermal Grizzly pour des températures optimales.</p>
+                <div class="srv-price">39,99 €</div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">🔧</div>
+                <h3 class="srv-name">Changement Composant Simple</h3>
+                <p class="srv-desc">Remplacement de SSD, disque dur, RAM, carte graphique ou ventilateurs.</p>
+                <div class="srv-price">55,99 € <small>composant non inclus</small></div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">🔩</div>
+                <h3 class="srv-name">Changement Composant Complexe</h3>
+                <p class="srv-desc">Remplacement de carte mère, processeur ou alimentation. Intervention approfondie.</p>
+                <div class="srv-price">89,99 € <small>composant non inclus</small></div>
+            </div>
+            <div class="srv reveal">
+                <div class="srv-ico">📦</div>
+                <h3 class="srv-name">Remplacement de Boîtier</h3>
+                <p class="srv-desc">Transfert complet de tous vos composants dans un nouveau boîtier. Câble management soigné.</p>
+                <div class="srv-price">84,99 € <small>boîtier non inclus</small></div>
+            </div>
+        </div>
+
+        <!-- LAPTOP NOTICE -->
+        <div class="laptop-notice reveal">
+            <div class="ln-ico">💻</div>
+            <div>
+                <h4>PC Portables — Info importante</h4>
+                <p>Les interventions sur <strong>PC portables</strong> sont limitées à : <strong>installation/réinstallation Windows 10/11</strong>, et <strong>remplacement SSD ou RAM</strong> (uniquement si le portable dispose d'une trappe de visite accessible). Les réparations matérielles complexes sur portables ne sont pas proposées à domicile.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="sc">
+        <h2 class="st reveal">À <span>Propos</span></h2>
+        <p class="ss reveal">Un passionné d'informatique à votre service.</p>
+        <div class="sd reveal"></div>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p>Je suis <strong>Jonathan</strong>, technicien informatique passionné basé en Creuse. J'interviens directement <strong>à votre domicile</strong> pour tous vos problèmes informatiques.</p>
+                <p>Que votre ordinateur soit lent, en panne, ou que vous souhaitiez simplement le remettre à neuf, je vous propose des solutions adaptées avec des <strong>tarifs clairs et transparents</strong>.</p>
+                <p>Mon objectif : vous offrir un service professionnel, rapide et de qualité, sans que vous ayez à vous déplacer. Je me déplace chez vous avec tout le matériel nécessaire.</p>
+                <p>N'hésitez pas à me contacter pour un devis gratuit ou pour toute question !</p>
+            </div>
+            <div class="stats reveal">
+                <div class="stat">
+                    <div class="stat-n">10+</div>
+                    <div class="stat-l">Années d'expérience</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-n">7j/7</div>
+                    <div class="stat-l">Disponibilité</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-n">100%</div>
+                    <div class="stat-l">Transparence tarifs</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ZONE -->
+<section id="zone">
+    <div class="sc">
+        <h2 class="st reveal">Zone <span>d'Intervention</span></h2>
+        <p class="ss reveal">J'interviens à domicile autour de Guéret et dans toute la Creuse.</p>
+        <div class="sd reveal"></div>
+        <div class="zone-c reveal">
+            <p>Basé à <strong style="color:var(--or)">Ajain</strong>, j'interviens dans toute l'agglomération de Guéret et les communes environnantes. Contactez-moi pour vérifier si vous êtes dans ma zone.</p>
+            <div class="zone-badge">📍 Guéret & alentours (23)</div>
+            <div class="zone-list">
+                <span class="zone-tag">Guéret</span>
+                <span class="zone-tag">Ajain</span>
+                <span class="zone-tag">Sainte-Feyre</span>
+                <span class="zone-tag">Saint-Sulpice-le-Guérétois</span>
+                <span class="zone-tag">La Chapelle-Taillefert</span>
+                <span class="zone-tag">Saint-Vaury</span>
+                <span class="zone-tag">Bénévent-l'Abbaye</span>
+                <span class="zone-tag">Bonnat</span>
+                <span class="zone-tag">Aubusson</span>
+                <span class="zone-tag">Bourganeuf</span>
+                <span class="zone-tag">La Souterraine</span>
+                <span class="zone-tag">Et plus...</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="sc">
+        <h2 class="st reveal">Me <span>Contacter</span></h2>
+        <p class="ss reveal">Un problème informatique ? Appelez-moi ou envoyez un message !</p>
+        <div class="sd reveal"></div>
+        <div class="contact-grid">
+            <div class="contact-card reveal">
+                <div class="contact-item">
+                    <div class="ci-icon">📞</div>
+                    <div class="ci-detail">
+                        <h4>Téléphone</h4>
+                        <a href="tel:0641995670">06 41 99 56 70</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon">✉️</div>
+                    <div class="ci-detail">
+                        <h4>Email</h4>
+                        <a href="mailto:jopcservice@gmail.com">jopcservice@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon">📍</div>
+                    <div class="ci-detail">
+                        <h4>Adresse</h4>
+                        <p>Ajain, 23380 — Creuse</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="ci-icon">🕐</div>
+                    <div class="ci-detail">
+                        <h4>Horaires</h4>
+                        <p>Lundi — Samedi : 9h - 19h</p>
+                    </div>
+                </div>
+            </div>
+            <form class="c-form reveal" onsubmit="handleForm(event)">
+                <input type="text" placeholder="Votre nom" required>
+                <input type="tel" placeholder="Votre téléphone" required>
+                <input type="email" placeholder="Votre email">
+                <textarea placeholder="Décrivez votre problème..." required></textarea>
+                <button type="submit" class="btn btn-p">Envoyer le message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="ft-c">
+        <div class="ft-grid">
+            <div class="ft-brand">
+                <img src="/logo.png" alt="Jonathan PC Service">
+                <p>Dépannage, réparation et entretien informatique à domicile dans la Creuse. Des tarifs transparents et un service professionnel directement chez vous.</p>
+            </div>
+            <div class="ft-links">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#zone">Zone d'intervention</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="ft-links">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:0641995670">06 41 99 56 70</a></li>
+                    <li><a href="mailto:jopcservice@gmail.com">jopcservice@gmail.com</a></li>
+                    <li><a href="#">Ajain, 23380</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="ft-bottom">
+            <p>© 2026 Jonathan PC Service — Tous droits réservés — SIRET : en cours d'attribution</p>
+            <div class="ft-legal">
+                <a href="#" onclick="openModal('mentions')">Mentions légales</a>
+                <a href="#" onclick="openModal('privacy')">Politique de confidentialité</a>
+                <a href="#" onclick="openModal('sitemap')">Plan du site</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- MODALS -->
+<!-- Mentions Légales -->
+<div class="modal-bg" id="modal-mentions">
+    <div class="modal">
+        <button class="modal-x" onclick="closeModals()">&times;</button>
+        <h2>Mentions Légales</h2>
+        <h3>Éditeur du site</h3>
+        <p><strong>Jonathan PC Service</strong><br>
+        Entrepreneur individuel — Micro-entreprise<br>
+        Jonathan Fruchou<br>
+        28 rue Guillaume Auvert, 23380 Ajain<br>
+        Téléphone : 06 41 99 56 70<br>
+        Email : jopcservice@gmail.com<br>
+        SIRET : en cours d'attribution<br>
+        Code APE : 95.11Z — Réparation d'ordinateurs et d'équipements périphériques</p>
+        <p>TVA non applicable, article 293 B du Code Général des Impôts.</p>
+
+        <h3>Hébergement</h3>
+        <p>Ce site est hébergé par :<br>
+        Vercel Inc.<br>
+        440 N Barranca Ave #4133, Covina, CA 91723, USA<br>
+        Site web : <a href="https://vercel.com" style="color:var(--or)">vercel.com</a></p>
+
+        <h3>Propriété intellectuelle</h3>
+        <p>L'ensemble du contenu de ce site (textes, images, logo, graphismes) est la propriété exclusive de Jonathan PC Service. Toute reproduction, représentation, modification ou exploitation de tout ou partie du contenu de ce site est interdite sans autorisation préalable.</p>
+
+        <h3>Responsabilité</h3>
+        <p>Jonathan PC Service s'efforce de fournir des informations exactes et à jour sur ce site. Toutefois, il ne peut garantir l'exactitude, la complétude ou l'actualité des informations diffusées. En conséquence, l'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive.</p>
+    </div>
+</div>
+
+<!-- Politique de Confidentialité -->
+<div class="modal-bg" id="modal-privacy">
+    <div class="modal">
+        <button class="modal-x" onclick="closeModals()">&times;</button>
+        <h2>Politique de Confidentialité</h2>
+        <p><em>Dernière mise à jour : 25 février 2026</em></p>
+
+        <h3>Responsable du traitement</h3>
+        <p>Jonathan Fruchou — Jonathan PC Service<br>
+        28 rue Guillaume Auvert, 23380 Ajain<br>
+        jopcservice@gmail.com</p>
+
+        <h3>Données collectées</h3>
+        <p>Les données personnelles collectées via le formulaire de contact sont : nom, adresse email, numéro de téléphone et le contenu de votre message. Ces données sont collectées uniquement lorsque vous les soumettez volontairement.</p>
+
+        <h3>Finalité du traitement</h3>
+        <p>Les données collectées sont utilisées exclusivement pour répondre à vos demandes de contact et vous fournir les services demandés. Elles ne sont en aucun cas transmises à des tiers.</p>
+
+        <h3>Durée de conservation</h3>
+        <p>Vos données sont conservées pendant la durée nécessaire au traitement de votre demande et au maximum 3 ans à compter du dernier contact.</p>
+
+        <h3>Vos droits</h3>
+        <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants :</p>
+        <ul>
+            <li>Droit d'accès à vos données personnelles</li>
+            <li>Droit de rectification de vos données</li>
+            <li>Droit à l'effacement de vos données</li>
+            <li>Droit à la limitation du traitement</li>
+            <li>Droit à la portabilité de vos données</li>
+            <li>Droit d'opposition au traitement</li>
+        </ul>
+        <p>Pour exercer ces droits, contactez-nous à : jopcservice@gmail.com</p>
+
+        <h3>Cookies</h3>
+        <p>Ce site n'utilise aucun cookie de suivi ni cookie publicitaire. Aucune donnée de navigation n'est collectée à des fins commerciales.</p>
+
+        <h3>Réclamation</h3>
+        <p>Si vous estimez que le traitement de vos données ne respecte pas la réglementation, vous pouvez adresser une réclamation à la CNIL : <a href="https://www.cnil.fr" style="color:var(--or)">www.cnil.fr</a></p>
+    </div>
+</div>
+
+<!-- Plan du site -->
+<div class="modal-bg" id="modal-sitemap">
+    <div class="modal">
+        <button class="modal-x" onclick="closeModals()">&times;</button>
+        <h2>Plan du Site</h2>
+        <h3>Pages principales</h3>
+        <ul>
+            <li><a href="#" style="color:var(--or)" onclick="closeModals()">Accueil</a></li>
+            <li><a href="#services" style="color:var(--or)" onclick="closeModals()">Nos Services & Tarifs</a></li>
+            <li><a href="#about" style="color:var(--or)" onclick="closeModals()">À Propos</a></li>
+            <li><a href="#zone" style="color:var(--or)" onclick="closeModals()">Zone d'Intervention</a></li>
+            <li><a href="#contact" style="color:var(--or)" onclick="closeModals()">Contact</a></li>
+        </ul>
+        <h3>Informations légales</h3>
+        <ul>
+            <li><a href="#" style="color:var(--or)" onclick="closeModals();setTimeout(()=>openModal('mentions'),300)">Mentions Légales</a></li>
+            <li><a href="#" style="color:var(--or)" onclick="closeModals();setTimeout(()=>openModal('privacy'),300)">Politique de Confidentialité</a></li>
+        </ul>
+        <h3>Contact direct</h3>
+        <ul>
+            <li>📞 <a href="tel:0641995670" style="color:var(--or)">06 41 99 56 70</a></li>
+            <li>✉️ <a href="mailto:jopcservice@gmail.com" style="color:var(--or)">jopcservice@gmail.com</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+// Navbar scroll
+window.addEventListener('scroll',()=>{
+    document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);
+});
+
+// Mobile menu
+function toggleMenu(){
+    document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('hamburger').classList.toggle('open');
+}
+document.querySelectorAll('.nav-links a').forEach(a=>{
+    a.addEventListener('click',()=>{
+        document.getElementById('navLinks').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('open');
+    });
+});
+
+// Reveal on scroll
+const observer=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}});
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+// Particles
+const pc=document.getElementById('particles');
+for(let i=0;i<20;i++){
+    const p=document.createElement('div');
+    p.classList.add('particle');
+    p.style.left=Math.random()*100+'%';
+    p.style.animationDelay=Math.random()*8+'s';
+    p.style.animationDuration=(6+Math.random()*6)+'s';
+    pc.appendChild(p);
+}
+
+// Modals
+function openModal(id){
+    event.preventDefault();
+    closeModals();
+    document.getElementById('modal-'+id).classList.add('active');
+    document.body.style.overflow='hidden';
+}
+function closeModals(){
+    document.querySelectorAll('.modal-bg').forEach(m=>m.classList.remove('active'));
+    document.body.style.overflow='';
+}
+document.querySelectorAll('.modal-bg').forEach(m=>{
+    m.addEventListener('click',e=>{if(e.target===m)closeModals()});
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModals()});
+
+// Form
+function handleForm(e){
+    e.preventDefault();
+    alert('Merci pour votre message ! Je vous recontacterai dans les plus brefs délais.\n\n📞 Pour une réponse plus rapide, appelez le 06 41 99 56 70');
+    e.target.reset();
+}
+</script>
+
+<!-- BOTTOM BAR -->
+<div class="bottom-bar">
+    <a href="tel:0641995670"><span class="bb-icon">📞</span> 06 41 99 56 70</a>
+    <span class="bb-sep">|</span>
+    <a href="mailto:jopcservice@gmail.com"><span class="bb-icon">✉️</span> Email</a>
+    <span class="bb-sep">|</span>
+    <a href="https://wa.me/33641995670" target="_blank" class="bb-wa"><span class="bb-icon">💬</span> WhatsApp</a>
+    <span class="bb-sep">|</span>
+    <span><span class="bb-icon">📍</span> Ajain (23) — Guéret, Sainte-Feyre, Saint-Vaury, Bonnat, Aubusson, La Souterraine...</span>
+</div>
+
+</body>
+</html>
