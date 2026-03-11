@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geek'Nexus - Périphériques</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#050505;
+      color:#fff;
+    }
+    .wrap{
+      max-width:1200px;
+      margin:0 auto;
+      padding:40px 20px 70px;
+    }
+    .back{
+      display:inline-block;
+      color:#fff;
+      text-decoration:none;
+      background:#1a1a1a;
+      border:1px solid #2b2b2b;
+      padding:12px 16px;
+      border-radius:10px;
+      margin-bottom:26px;
+    }
+    h1{
+      color:#ff7a00;
+      font-size:48px;
+      margin:0 0 24px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:center;
+      margin-bottom:30px;
+    }
+    .hero img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      box-shadow:0 18px 40px rgba(0,0,0,.5);
+    }
+    .panel{
+      background:#111;
+      border:1px solid #202020;
+      border-radius:18px;
+      padding:26px;
+    }
+    .panel h2{
+      margin-top:0;
+      color:#ff7a00;
+    }
+    .list{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+      margin-top:18px;
+    }
+    .item{
+      background:#0d0d0d;
+      border:1px solid #232323;
+      border-radius:14px;
+      padding:18px;
+      color:#d7d7d7;
+      font-weight:700;
+      text-align:center;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#ff7a00;
+      color:#fff;
+      padding:14px 20px;
+      border-radius:12px;
+      font-weight:700;
+      margin-top:20px;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .list{grid-template-columns:1fr}
+      h1{font-size:38px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="nos-pc.html">← Retour à Nos produits</a>
+    <h1>Périphériques</h1>
+
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1400&q=80" alt="Périphériques Geek'Nexus">
+
+      <div class="panel">
+        <h2>Complétez votre setup</h2>
+        <p style="color:#d7d7d7; line-height:1.7;">
+          Retrouvez nos périphériques pour le gaming, le travail et le multimédia.
+        </p>
+
+        <div class="list">
+          <div class="item">Claviers</div>
+          <div class="item">Souris</div>
+          <div class="item">Casques</div>
+          <div class="item">Manettes</div>
+        </div>
+
+        <a class="btn" href="mailto:jopcservice@gmail.com?subject=Demande%20p%C3%A9riph%C3%A9riques">Demander des infos</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
