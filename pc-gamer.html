@@ -5,175 +5,451 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geek'Nexus - PC Gamer</title>
   <style>
-    *{box-sizing:border-box}
-    body{
+    *{
+      box-sizing:border-box;
       margin:0;
-      font-family:Arial,sans-serif;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
       background:#050505;
       color:#fff;
     }
-    .wrap{
-      max-width:1280px;
-      margin:0 auto;
-      padding:40px 20px 70px;
+
+    a{
+      text-decoration:none;
+      color:inherit;
     }
+
+    .wrap{
+      max-width:1400px;
+      margin:0 auto;
+      padding:40px 20px 80px;
+    }
+
     .topbar{
       display:flex;
       justify-content:space-between;
       align-items:center;
       gap:20px;
-      flex-wrap:wrap;
       margin-bottom:30px;
+      flex-wrap:wrap;
     }
+
     .back{
+      display:inline-block;
+      padding:12px 18px;
+      background:#111;
+      border:1px solid #2a2a2a;
+      border-radius:14px;
       color:#fff;
-      text-decoration:none;
-      background:#1a1a1a;
-      border:1px solid #2b2b2b;
-      padding:12px 16px;
-      border-radius:10px;
+      font-weight:700;
+      transition:0.2s ease;
     }
-    h1{
-      margin:0;
+
+    .back:hover{
+      border-color:#ff7a00;
       color:#ff7a00;
-      font-size:48px;
     }
+
+    h1{
+      font-size:54px;
+      color:#ff7a00;
+      font-weight:800;
+    }
+
+    .subtitle{
+      color:#d0d0d0;
+      margin-top:8px;
+      margin-bottom:28px;
+      font-size:18px;
+    }
+
     .hero{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:30px;
-      align-items:center;
+      grid-template-columns:1.7fr 0.9fr;
+      gap:28px;
+      align-items:start;
+      margin-bottom:40px;
     }
-    .hero img{
-      width:100%;
-      border-radius:18px;
-      display:block;
-      box-shadow:0 18px 40px rgba(0,0,0,.5);
-    }
-    .panel{
-      background:#111;
+
+    .left-panel{
+      background:#0d0d0d;
       border:1px solid #202020;
-      border-radius:18px;
-      padding:26px;
-      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.45);
     }
-    .panel h2{
-      margin:0 0 16px;
+
+    .filter-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-bottom:24px;
+    }
+
+    .filter-btn{
+      padding:20px 26px;
+      border:1px solid #2a2a2a;
+      border-radius:20px;
+      background:#111;
+      color:#d6d6d6;
+      font-size:18px;
+      font-weight:700;
+      transition:0.25s ease;
+      cursor:pointer;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active{
+      border-color:#ff7a00;
+      color:#fff;
+      box-shadow:0 0 0 1px rgba(255,122,0,0.15) inset;
+    }
+
+    .intro-box{
+      background:#111;
+      border:1px solid #212121;
+      border-radius:20px;
+      padding:24px;
+    }
+
+    .intro-box h2{
       color:#ff7a00;
       font-size:28px;
+      margin-bottom:12px;
     }
-    .line{
-      margin-bottom:16px;
-    }
-    .line label{
-      display:block;
-      margin-bottom:8px;
+
+    .intro-box p{
       color:#d8d8d8;
-      font-weight:700;
-    }
-    .line select{
-      width:100%;
-      padding:14px;
-      border-radius:12px;
-      border:1px solid #2f2f2f;
-      background:#0d0d0d;
-      color:#fff;
+      line-height:1.7;
       font-size:16px;
     }
-    .actions{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      margin-top:22px;
+
+    .custom-box{
+      background:linear-gradient(180deg,#111 0%, #0b0b0b 100%);
+      border:1px solid #262626;
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.45);
+      position:sticky;
+      top:20px;
     }
+
+    .custom-box h2{
+      color:#ff7a00;
+      font-size:32px;
+      margin-bottom:14px;
+    }
+
+    .custom-box p{
+      color:#d9d9d9;
+      line-height:1.7;
+      font-size:16px;
+      margin-bottom:14px;
+    }
+
+    .custom-box ul{
+      list-style:none;
+      margin:18px 0 24px;
+      padding:0;
+    }
+
+    .custom-box li{
+      margin-bottom:12px;
+      padding-left:18px;
+      position:relative;
+      color:#e2e2e2;
+      line-height:1.5;
+    }
+
+    .custom-box li::before{
+      content:"•";
+      position:absolute;
+      left:0;
+      color:#ff7a00;
+      font-weight:900;
+    }
+
+    .btns{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
     .btn{
-      display:inline-block;
-      text-decoration:none;
+      display:block;
+      text-align:center;
+      padding:15px 18px;
+      border-radius:14px;
+      font-weight:800;
+      font-size:16px;
+      transition:0.25s ease;
+    }
+
+    .btn.orange{
       background:#ff7a00;
       color:#fff;
-      padding:14px 20px;
-      border-radius:12px;
-      font-weight:700;
     }
-    .btn.alt{
-      background:#1a1a1a;
-      border:1px solid #2a2a2a;
+
+    .btn.orange:hover{
+      background:#e46f00;
     }
-    .desc{
-      color:#d7d7d7;
-      line-height:1.7;
+
+    .btn.dark{
+      background:#151515;
+      border:1px solid #2d2d2d;
+      color:#fff;
+    }
+
+    .btn.dark:hover{
+      border-color:#ff7a00;
+      color:#ff7a00;
+    }
+
+    .section-title{
+      font-size:38px;
+      color:#ff7a00;
+      font-weight:800;
+      margin:10px 0 10px;
+    }
+
+    .section-subtitle{
+      color:#cfcfcf;
+      margin-bottom:26px;
+      font-size:17px;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:26px;
+    }
+
+    .product-card{
+      background:#0d0d0d;
+      border:1px solid #202020;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 14px 35px rgba(0,0,0,0.4);
+      transition:0.25s ease;
+    }
+
+    .product-card:hover{
+      transform:translateY(-5px);
+      border-color:#ff7a00;
+    }
+
+    .product-image{
+      aspect-ratio:1 / 1;
+      background:#111;
+      overflow:hidden;
+    }
+
+    .product-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .product-content{
+      padding:22px;
+    }
+
+    .product-content h3{
+      color:#ff7a00;
+      font-size:26px;
+      margin-bottom:10px;
+    }
+
+    .product-content p{
+      color:#d8d8d8;
+      font-size:15px;
+      line-height:1.6;
+      margin-bottom:16px;
+      min-height:72px;
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
       margin-bottom:18px;
     }
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      h1{font-size:38px}
+
+    .tag{
+      background:#151515;
+      border:1px solid #2a2a2a;
+      padding:8px 12px;
+      border-radius:999px;
+      color:#ddd;
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .product-btn{
+      display:inline-block;
+      background:#ff7a00;
+      color:#fff;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:800;
+      font-size:15px;
+    }
+
+    .coming{
+      margin-top:18px;
+      color:#8f8f8f;
+      font-size:14px;
+    }
+
+    @media (max-width: 1150px){
+      .hero{
+        grid-template-columns:1fr;
+      }
+
+      .product-grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .custom-box{
+        position:static;
+      }
+    }
+
+    @media (max-width: 760px){
+      h1{
+        font-size:38px;
+      }
+
+      .filter-btn{
+        width:100%;
+        text-align:center;
+      }
+
+      .product-grid{
+        grid-template-columns:1fr;
+      }
+
+      .section-title{
+        font-size:30px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
+
     <div class="topbar">
       <a class="back" href="nos-pc.html">← Retour à Nos produits</a>
-      <h1>PC Gamer</h1>
     </div>
 
+    <h1>PC Gamer Geek'Nexus</h1>
+    <div class="subtitle">Choisissez votre base de configuration ou demandez un PC sur mesure adapté à vos besoins.</div>
+
     <div class="hero">
-      <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1400&q=80" alt="PC Gamer Geek'Nexus">
-
-      <div class="panel">
-        <h2>Configurer votre PC Gamer</h2>
-        <div class="desc">
-          Choisissez votre base de configuration. Ensuite on pourra ajouter les modèles au fur et à mesure.
+      <div class="left-panel">
+        <div class="filter-row">
+          <button class="filter-btn active">PC AMD</button>
+          <button class="filter-btn">PC INTEL</button>
+          <button class="filter-btn">Carte graphique RX AMD</button>
+          <button class="filter-btn">Carte RTX NVIDIA</button>
         </div>
 
-        <div class="line">
-          <label>Processeur</label>
-          <select>
-            <option>AMD Ryzen</option>
-            <option>Intel Core</option>
-          </select>
-        </div>
-
-        <div class="line">
-          <label>Carte graphique</label>
-          <select>
-            <option>NVIDIA RTX</option>
-            <option>AMD RX</option>
-          </select>
-        </div>
-
-        <div class="line">
-          <label>Mémoire RAM</label>
-          <select>
-            <option>16 Go DDR4</option>
-            <option>32 Go DDR4</option>
-            <option>32 Go DDR5</option>
-          </select>
-        </div>
-
-        <div class="line">
-          <label>Stockage</label>
-          <select>
-            <option>SSD 500 Go M.2</option>
-            <option>SSD 1 To M.2</option>
-            <option>SSD 2 To M.2</option>
-          </select>
-        </div>
-
-        <div class="line">
-          <label>Boîtier</label>
-          <select>
-            <option>Boîtier Gamer RGB</option>
-            <option>Boîtier sobre noir</option>
-            <option>Boîtier vitré premium</option>
-          </select>
-        </div>
-
-        <div class="actions">
-          <a class="btn" href="mailto:jopcservice@gmail.com?subject=Demande%20PC%20Gamer%20sur%20mesure">Demander un devis</a>
-          <a class="btn alt" href="https://www.facebook.com/profile.php?id=61588460052112" target="_blank">Conseil sur Facebook</a>
+        <div class="intro-box">
+          <h2>Nos configurations Gamer</h2>
+          <p>
+            Retrouvez ici tous les PC Gamer Geek'Nexus.  
+            Plus tard tu pourras afficher ici toutes tes machines disponibles en stock ou sur commande,
+            avec les modèles AMD, Intel, RX et RTX.
+          </p>
         </div>
       </div>
+
+      <aside class="custom-box">
+        <h2>PC sur mesure</h2>
+        <p>
+          Créez la machine de vos rêves ou une configuration totalement adaptée à vos besoins.
+        </p>
+        <p>
+          Vous choisissez vos composants selon votre budget, votre style et votre utilisation :
+          gaming, streaming, création, performance ou setup sobre.
+        </p>
+
+        <ul>
+          <li>Choix du processeur AMD ou Intel</li>
+          <li>Choix de la carte graphique RX ou RTX</li>
+          <li>Choix de la RAM, du SSD et du boîtier</li>
+          <li>Machine adaptée à vos envies et à votre budget</li>
+        </ul>
+
+        <div class="btns">
+          <a class="btn orange" href="mailto:jopcservice@gmail.com?subject=Demande%20PC%20sur%20mesure">Demande de devis</a>
+          <a class="btn dark" href="https://www.facebook.com/profile.php?id=61588460052112" target="_blank">Demande sur Facebook</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="section-title">Tous nos PC Gamer</div>
+    <div class="section-subtitle">
+      Les cartes ci-dessous sont prêtes pour afficher tes PC gamer et bureautique quand tu en ajouteras.
+    </div>
+
+    <div class="product-grid">
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="pc-gamer.png" alt="PC Gamer Geek'Nexus">
+        </div>
+        <div class="product-content">
+          <h3>PC Gamer #1</h3>
+          <p>Ajoute ici ton premier PC Gamer avec le nom, la config et le prix.</p>
+          <div class="tag-row">
+            <span class="tag">AMD / Intel</span>
+            <span class="tag">RTX / RX</span>
+            <span class="tag">À compléter</span>
+          </div>
+          <a href="mailto:jopcservice@gmail.com?subject=Demande%20PC%20Gamer%201" class="product-btn">Demander des infos</a>
+          <div class="coming">Exemple de carte produit à remplacer plus tard.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="pc-bureautique.png" alt="PC Bureautique Geek'Nexus">
+        </div>
+        <div class="product-content">
+          <h3>PC Bureautique #1</h3>
+          <p>Ajoute ici un futur PC bureautique si tu veux aussi en montrer depuis cette page.</p>
+          <div class="tag-row">
+            <span class="tag">Bureautique</span>
+            <span class="tag">Sobre</span>
+            <span class="tag">À compléter</span>
+          </div>
+          <a href="mailto:jopcservice@gmail.com?subject=Demande%20PC%20Bureautique%201" class="product-btn">Demander des infos</a>
+          <div class="coming">Carte prête à remplacer avec un vrai modèle.</div>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image">
+          <img src="pc-gamer.png" alt="PC Gamer Geek'Nexus">
+        </div>
+        <div class="product-content">
+          <h3>PC Gamer #2</h3>
+          <p>Ajoute ici une autre machine avec sa config, son style, son prix et ses options.</p>
+          <div class="tag-row">
+            <span class="tag">Gaming</span>
+            <span class="tag">Sur mesure</span>
+            <span class="tag">À compléter</span>
+          </div>
+          <a href="mailto:jopcservice@gmail.com?subject=Demande%20PC%20Gamer%202" class="product-btn">Demander des infos</a>
+          <div class="coming">Bloc prêt pour tes futurs modèles.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>
