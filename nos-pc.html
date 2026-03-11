@@ -1,72 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Nos PC - Geek'Nexus</title>
+<title>Geek'Nexus - Nos PC</title>
 
 <style>
 
 body{
+background:#0b0b0b;
 font-family:Arial;
-background:#ffffff;
 margin:0;
+color:white;
 }
 
 header{
-background:#ff7a00;
-color:white;
-padding:25px;
 text-align:center;
-font-size:30px;
+padding:40px;
+font-size:32px;
 font-weight:bold;
+color:#ff7a00;
 }
 
 .container{
-width:90%;
 max-width:1200px;
 margin:auto;
-padding:40px 20px;
+padding:20px;
 }
 
-.section{
-margin-bottom:60px;
-}
-
-h2{
-color:#ff7a00;
-margin-bottom:20px;
-}
-
-.cards{
+.grid{
 display:flex;
-gap:20px;
+gap:40px;
 flex-wrap:wrap;
+justify-content:center;
+margin-top:40px;
 }
 
 .card{
-background:#f4f4f4;
-padding:25px;
-border-radius:10px;
-flex:1;
-min-width:250px;
+transition:0.3s;
 }
 
-.config{
-background:#f9f9f9;
+.card img{
+width:500px;
+border-radius:12px;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+footer{
+margin-top:60px;
+text-align:center;
+color:#aaa;
 padding:30px;
-border-radius:10px;
-margin-top:20px;
-}
-
-.option{
-margin-bottom:15px;
-}
-
-select{
-width:100%;
-padding:10px;
-border-radius:6px;
-border:1px solid #ddd;
 }
 
 button{
@@ -76,110 +65,50 @@ padding:12px 20px;
 color:white;
 border-radius:6px;
 cursor:pointer;
-margin-top:10px;
 }
 
 button:hover{
-background:#e56c00;
+background:#e66c00;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
-Geek'Nexus - Nos PC
+
+Geek'Nexus - Nos produits
+
 </header>
 
 <div class="container">
 
-<div class="section">
+<div class="grid">
 
-<h2>Nos ordinateurs</h2>
+<a href="pc-gamer.html" class="card">
 
-<div class="cards">
+<img src="pc-gamer.jpg">
 
-<div class="card">
-<h3>PC Gamer</h3>
-<p>Machines performantes pour jouer aux jeux récents en haute qualité.</p>
-</div>
-
-<div class="card">
-<h3>PC Bureautique</h3>
-<p>PC rapides et silencieux pour internet, travail et multimédia.</p>
-</div>
-
-<div class="card">
-<h3>Périphériques</h3>
-<p>Claviers, souris, écrans, casques et accessoires.</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>Configurer un PC Gamer</h2>
-
-<div class="config">
-
-<div class="option">
-Processeur
-<select>
-<option>AMD Ryzen</option>
-<option>Intel Core</option>
-</select>
-</div>
-
-<div class="option">
-Carte graphique
-<select>
-<option>RTX</option>
-<option>RX</option>
-</select>
-</div>
-
-<div class="option">
-Mémoire
-<select>
-<option>16 Go</option>
-<option>32 Go</option>
-</select>
-</div>
-
-<div class="option">
-Stockage
-<select>
-<option>SSD 500 Go</option>
-<option>SSD 1 To</option>
-</select>
-</div>
-
-<div class="option">
-Boîtier
-<select>
-<option>Boîtier Gamer RGB</option>
-<option>Boîtier sobre</option>
-</select>
-</div>
-
-<a href="mailto:jopcservice@gmail.com">
-<button>Demander un devis</button>
 </a>
 
-<br>
+<a href="peripheriques.html" class="card">
 
-<a href="https://www.facebook.com/profile.php?id=61588460052112">
-<button>Demander conseil sur Facebook</button>
+<img src="peripheriques.jpg">
+
 </a>
 
 </div>
 
 </div>
 
-</div>
+<footer>
+
+Jonathan PC Service - Geek'Nexus
+
+</footer>
 
 </body>
+
 </html>
