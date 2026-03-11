@@ -1,97 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Geek'Nexus - Nos produits</title>
-
-<style>
-
-body{
-margin:0;
-background:#050505;
-font-family:Arial;
-color:white;
-text-align:center;
-}
-
-h1{
-color:#ff7a00;
-margin-top:40px;
-}
-
-.subtitle{
-color:#cfcfcf;
-margin-bottom:40px;
-}
-
-.container{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-max-width:1200px;
-margin:auto;
-padding:40px;
-}
-
-.card{
-width:350px;
-background:#111;
-border-radius:10px;
-overflow:hidden;
-transition:0.3s;
-cursor:pointer;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
-
-.card:hover{
-transform:scale(1.05);
-}
-
-.card img{
-width:100%;
-display:block;
-}
-
-.footer{
-margin-top:40px;
-color:#888;
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geek'Nexus - Nos produits</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#050505;
+      color:#fff;
+    }
+    .wrap{
+      max-width:1280px;
+      margin:0 auto;
+      padding:40px 20px 70px;
+    }
+    h1{
+      text-align:center;
+      color:#ff7a00;
+      margin:0 0 10px;
+      font-size:52px;
+    }
+    .sub{
+      text-align:center;
+      color:#d0d0d0;
+      margin-bottom:40px;
+      font-size:20px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+    .card{
+      display:block;
+      text-decoration:none;
+      background:#101010;
+      border:1px solid #1f1f1f;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 14px 35px rgba(0,0,0,.45);
+      transition:.25s ease;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      border-color:#ff7a00;
+      box-shadow:0 18px 40px rgba(0,0,0,.6);
+    }
+    .card img{
+      width:100%;
+      display:block;
+      height:auto;
+    }
+    .content{
+      padding:22px;
+    }
+    .content h2{
+      margin:0 0 12px;
+      color:#ff7a00;
+      font-size:30px;
+    }
+    .content p{
+      margin:0;
+      color:#d7d7d7;
+      line-height:1.6;
+      font-size:16px;
+    }
+    .btn{
+      display:inline-block;
+      margin-top:16px;
+      padding:12px 18px;
+      background:#ff7a00;
+      color:#fff;
+      border-radius:10px;
+      font-weight:700;
+    }
+    .footer{
+      text-align:center;
+      color:#8f8f8f;
+      margin-top:40px;
+      font-size:15px;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <h1>Geek'Nexus - Nos produits</h1>
+    <div class="sub">Choisissez votre univers : Gamer, Bureautique ou Périphériques</div>
 
-<h1>Geek'Nexus - Nos produits</h1>
-<p class="subtitle">Choisissez votre univers : Gamer, Bureautique ou Périphériques</p>
+    <div class="grid">
+      <a class="card" href="pc-gamer.html">
+        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1200&q=80" alt="PC Gamer">
+        <div class="content">
+          <h2>PC Gamer</h2>
+          <p>Découvrez nos configurations gaming Geek'Nexus avec personnalisation AMD ou Intel, RTX ou RX, RAM, SSD et boîtier.</p>
+          <span class="btn">Voir les PC Gamer</span>
+        </div>
+      </a>
 
-<div class="container">
+      <a class="card" href="pc-bureautique.html">
+        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1200&q=80" alt="PC Bureautique">
+        <div class="content">
+          <h2>PC Bureautique</h2>
+          <p>Des ordinateurs sobres, rapides et fiables pour le travail, internet, les logiciels du quotidien et le multimédia.</p>
+          <span class="btn">Voir les PC Bureautique</span>
+        </div>
+      </a>
 
-<a href="pc-gamer.html">
-<div class="card">
-<img src="https://i.imgur.com/4M34hi2.jpg">
-</div>
-</a>
+      <a class="card" href="peripheriques.html">
+        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1200&q=80" alt="Périphériques">
+        <div class="content">
+          <h2>Périphériques</h2>
+          <p>Claviers, souris, casques et manettes pour compléter votre setup Geek'Nexus.</p>
+          <span class="btn">Voir les périphériques</span>
+        </div>
+      </a>
+    </div>
 
-<a href="pc-bureautique.html">
-<div class="card">
-<img src="https://i.imgur.com/jl1Jv0U.jpg">
-</div>
-</a>
-
-<a href="peripheriques.html">
-<div class="card">
-<img src="https://i.imgur.com/8ohC1Yy.jpg">
-</div>
-</a>
-
-</div>
-
-<div class="footer">
-Jonathan PC Service - Geek'Nexus
-</div>
-
+    <div class="footer">Jonathan PC Service - Geek'Nexus</div>
+  </div>
 </body>
 </html>
