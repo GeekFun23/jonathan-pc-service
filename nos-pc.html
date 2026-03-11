@@ -5,83 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Geek'Nexus - Nos produits</title>
   <style>
-    *{box-sizing:border-box}
-    body{
+    *{
+      box-sizing:border-box;
       margin:0;
-      font-family:Arial,sans-serif;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
       background:#050505;
       color:#fff;
     }
+
     .wrap{
-      max-width:1280px;
+      max-width:1250px;
       margin:0 auto;
       padding:40px 20px 70px;
     }
+
     h1{
       text-align:center;
       color:#ff7a00;
-      margin:0 0 10px;
-      font-size:52px;
+      font-size:64px;
+      font-weight:800;
+      margin-bottom:14px;
     }
+
     .sub{
       text-align:center;
-      color:#d0d0d0;
-      margin-bottom:40px;
-      font-size:20px;
+      color:#d4d4d4;
+      font-size:18px;
+      margin-bottom:50px;
     }
+
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      grid-template-columns:repeat(3, 1fr);
       gap:30px;
     }
+
     .card{
-      display:block;
-      text-decoration:none;
-      background:#101010;
-      border:1px solid #1f1f1f;
-      border-radius:18px;
+      background:#0d0d0d;
+      border:1px solid #222;
+      border-radius:22px;
       overflow:hidden;
-      box-shadow:0 14px 35px rgba(0,0,0,.45);
-      transition:.25s ease;
+      text-decoration:none;
+      color:#fff;
+      box-shadow:0 12px 30px rgba(0,0,0,0.45);
+      transition:0.25s ease;
     }
+
     .card:hover{
       transform:translateY(-6px);
       border-color:#ff7a00;
-      box-shadow:0 18px 40px rgba(0,0,0,.6);
+      box-shadow:0 18px 40px rgba(0,0,0,0.6);
     }
-    .card img{
+
+    .card-image{
+      aspect-ratio:1 / 1;
       width:100%;
-      display:block;
-      height:auto;
+      overflow:hidden;
+      background:#111;
     }
+
+    .card-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
     .content{
       padding:22px;
     }
+
     .content h2{
-      margin:0 0 12px;
       color:#ff7a00;
-      font-size:30px;
+      font-size:28px;
+      margin-bottom:12px;
     }
+
     .content p{
-      margin:0;
-      color:#d7d7d7;
-      line-height:1.6;
+      color:#d5d5d5;
       font-size:16px;
+      line-height:1.6;
+      min-height:90px;
     }
+
     .btn{
       display:inline-block;
-      margin-top:16px;
-      padding:12px 18px;
+      margin-top:18px;
       background:#ff7a00;
       color:#fff;
-      border-radius:10px;
+      padding:13px 18px;
+      border-radius:12px;
       font-weight:700;
+      font-size:16px;
     }
+
     .footer{
       text-align:center;
-      color:#8f8f8f;
+      color:#8d8d8d;
       margin-top:40px;
       font-size:15px;
+    }
+
+    @media (max-width: 1000px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:44px;
+      }
     }
   </style>
 </head>
@@ -92,7 +128,9 @@
 
     <div class="grid">
       <a class="card" href="pc-gamer.html">
-        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1200&q=80" alt="PC Gamer">
+        <div class="card-image">
+          <img src="pc-gamer.png" alt="PC Gamer Geek'Nexus">
+        </div>
         <div class="content">
           <h2>PC Gamer</h2>
           <p>Découvrez nos configurations gaming Geek'Nexus avec personnalisation AMD ou Intel, RTX ou RX, RAM, SSD et boîtier.</p>
@@ -101,7 +139,9 @@
       </a>
 
       <a class="card" href="pc-bureautique.html">
-        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=1200&q=80" alt="PC Bureautique">
+        <div class="card-image">
+          <img src="pc-bureautique.png" alt="PC Bureautique Geek'Nexus">
+        </div>
         <div class="content">
           <h2>PC Bureautique</h2>
           <p>Des ordinateurs sobres, rapides et fiables pour le travail, internet, les logiciels du quotidien et le multimédia.</p>
@@ -110,7 +150,9 @@
       </a>
 
       <a class="card" href="peripheriques.html">
-        <img src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?auto=format&fit=crop&w=1200&q=80" alt="Périphériques">
+        <div class="card-image">
+          <img src="peripheriques.png" alt="Périphériques Geek'Nexus">
+        </div>
         <div class="content">
           <h2>Périphériques</h2>
           <p>Claviers, souris, casques et manettes pour compléter votre setup Geek'Nexus.</p>
