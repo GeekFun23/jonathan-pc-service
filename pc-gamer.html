@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geek'Nexus - PC Gamer</title>
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,sans-serif;
+      background:#050505;
+      color:#fff;
+    }
+    .wrap{
+      max-width:1280px;
+      margin:0 auto;
+      padding:40px 20px 70px;
+    }
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-bottom:30px;
+    }
+    .back{
+      color:#fff;
+      text-decoration:none;
+      background:#1a1a1a;
+      border:1px solid #2b2b2b;
+      padding:12px 16px;
+      border-radius:10px;
+    }
+    h1{
+      margin:0;
+      color:#ff7a00;
+      font-size:48px;
+    }
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:30px;
+      align-items:center;
+    }
+    .hero img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      box-shadow:0 18px 40px rgba(0,0,0,.5);
+    }
+    .panel{
+      background:#111;
+      border:1px solid #202020;
+      border-radius:18px;
+      padding:26px;
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    .panel h2{
+      margin:0 0 16px;
+      color:#ff7a00;
+      font-size:28px;
+    }
+    .line{
+      margin-bottom:16px;
+    }
+    .line label{
+      display:block;
+      margin-bottom:8px;
+      color:#d8d8d8;
+      font-weight:700;
+    }
+    .line select{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid #2f2f2f;
+      background:#0d0d0d;
+      color:#fff;
+      font-size:16px;
+    }
+    .actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:22px;
+    }
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      background:#ff7a00;
+      color:#fff;
+      padding:14px 20px;
+      border-radius:12px;
+      font-weight:700;
+    }
+    .btn.alt{
+      background:#1a1a1a;
+      border:1px solid #2a2a2a;
+    }
+    .desc{
+      color:#d7d7d7;
+      line-height:1.7;
+      margin-bottom:18px;
+    }
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      h1{font-size:38px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="back" href="nos-pc.html">← Retour à Nos produits</a>
+      <h1>PC Gamer</h1>
+    </div>
+
+    <div class="hero">
+      <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1400&q=80" alt="PC Gamer Geek'Nexus">
+
+      <div class="panel">
+        <h2>Configurer votre PC Gamer</h2>
+        <div class="desc">
+          Choisissez votre base de configuration. Ensuite on pourra ajouter les modèles au fur et à mesure.
+        </div>
+
+        <div class="line">
+          <label>Processeur</label>
+          <select>
+            <option>AMD Ryzen</option>
+            <option>Intel Core</option>
+          </select>
+        </div>
+
+        <div class="line">
+          <label>Carte graphique</label>
+          <select>
+            <option>NVIDIA RTX</option>
+            <option>AMD RX</option>
+          </select>
+        </div>
+
+        <div class="line">
+          <label>Mémoire RAM</label>
+          <select>
+            <option>16 Go DDR4</option>
+            <option>32 Go DDR4</option>
+            <option>32 Go DDR5</option>
+          </select>
+        </div>
+
+        <div class="line">
+          <label>Stockage</label>
+          <select>
+            <option>SSD 500 Go M.2</option>
+            <option>SSD 1 To M.2</option>
+            <option>SSD 2 To M.2</option>
+          </select>
+        </div>
+
+        <div class="line">
+          <label>Boîtier</label>
+          <select>
+            <option>Boîtier Gamer RGB</option>
+            <option>Boîtier sobre noir</option>
+            <option>Boîtier vitré premium</option>
+          </select>
+        </div>
+
+        <div class="actions">
+          <a class="btn" href="mailto:jopcservice@gmail.com?subject=Demande%20PC%20Gamer%20sur%20mesure">Demander un devis</a>
+          <a class="btn alt" href="https://www.facebook.com/profile.php?id=61588460052112" target="_blank">Conseil sur Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
