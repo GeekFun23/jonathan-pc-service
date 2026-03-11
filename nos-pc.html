@@ -2,48 +2,96 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Geek'Nexus - Nos produits</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#050505;color:#fff}
-a{text-decoration:none}
-.hero{padding:40px 20px 18px;text-align:center}
-.hero h1{margin:0;color:#ff7a00;font-size:clamp(30px,5vw,48px);font-weight:800}
-.hero p{margin:12px 0 0;color:#d0d0d0;font-size:18px}
-.wrap{max-width:1320px;margin:0 auto;padding:20px 18px 70px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
-.card{display:block;background:#0d0d0d;border:1px solid #1d1d1d;border-radius:20px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.45);transition:.25s;color:#fff}
-.card:hover{transform:translateY(-6px);border-color:#ff7a00;box-shadow:0 24px 55px rgba(0,0,0,.6)}
-.card img,.section img{display:block;width:100%;height:auto}
-.content{padding:22px}
-.content h2,.section h2{margin:0 0 10px;color:#ff7a00;font-size:30px}
-.content p,.section p{margin:0;color:#ddd;line-height:1.6}
-.footer{text-align:center;padding:10px 20px 42px;color:#9a9a9a}
-.section{display:none;max-width:1100px;margin:0 auto;padding:30px 18px 60px}
-.panel{background:#0d0d0d;border:1px solid #1d1d1d;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.45)}
-.section-body{padding:24px}
-.btns{display:flex;gap:14px;flex-wrap:wrap;margin:20px 0 0}
-.btn{display:inline-block;padding:13px 18px;border-radius:999px;font-weight:700}
-.orange{background:#ff7a00;color:#fff}
-.outline{border:1px solid #ff7a00;color:#fff}
-.grid-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px}
-.box{background:#111;padding:18px;border-radius:16px;border:1px solid #1f1f1f}
-.box h3{margin:0 0 8px;color:#ff7a00;font-size:20px}
-.box p{margin:0;color:#d0d0d0;font-size:15px;line-height:1.5}
-.back{display:inline-block;margin-bottom:20px;background:#ff7a00;color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;cursor:pointer}
+
+body{
+margin:0;
+background:#050505;
+font-family:Arial;
+color:white;
+text-align:center;
+}
+
+h1{
+color:#ff7a00;
+margin-top:40px;
+}
+
+.subtitle{
+color:#cfcfcf;
+margin-bottom:40px;
+}
+
+.container{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+max-width:1200px;
+margin:auto;
+padding:40px;
+}
+
+.card{
+width:350px;
+background:#111;
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+display:block;
+}
+
+.footer{
+margin-top:40px;
+color:#888;
+}
+
 </style>
+
 </head>
+
 <body>
 
-<section id="home">
-  <section class="hero">
-    <h1>Geek'Nexus - Nos produits</h1>
-    <p>Choisissez votre univers : Gamer, Bureautique ou Périphériques</p>
-  </section>
+<h1>Geek'Nexus - Nos produits</h1>
+<p class="subtitle">Choisissez votre univers : Gamer, Bureautique ou Périphériques</p>
 
-  <main class="wrap">
-    <div class="grid">
+<div class="container">
 
-      <a class="card" href="#pc-gamer">
-        <img alt="Tous nos PC Gamer" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHBwgHBgoICAkLCgoLDhgQDg0NDh0VFhEYIB0iIiAdHysjGh0oHR0iJDUkKC0vMjIyIys3PDcwPCsxMi8BCwsLDw4PHRERHTIpIikxMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMTExMf/AABEIAfoDgAMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABQYBBAcDAv/EAEAQAAEDAgMEBQYEBgMBAAAAAAEAAgMEEQUSITFBBhMiUWFxFDKBkaGxwQcUI1JSwfAjYnKS8RVDYoPS/8QAGAEAAwEBAAAAAAAAAAAAAAAAAAECAwT/xAAgEQEBAAICAwEBAQAAAAAAAAAAAQIRAyExEkEEE1Fh/9oADAMBAAIRAxEAPwD5vREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQfYt+PauN9Yg3Qq7W8a1wdA2K0Xo6Wst0w0A2y7wQ7oWj3Tz+0n9Qh8jS8HnG0m4H9z+CrTtq6m1q62N1CzG6l9h2K7fD6r7d9XK3kW+0oY6V1bK6ta5sQ7Q4x2B9p+VjvItv9m7m2uk7m2x0x4m0d0tq5v9oYj1Ebt7X3p3n6zFJ6a7rQW9rV4m0bQ3p7fYq6n1G5j2aM2c6t9m2m0X9L2dYH8V3M2XWw5l4k7xq2bn8Quj6j5cL5XW5YJ0fQh7fE1w6gY5vCjvQeQx5nV6Tt1q3WkL2u0u2M8m2+1t2Qfmsqf7z0zQ8S5zHnD2k7S4v8A1OVd7m7J8zq3vH8NfJm8NqS2i6z4+e2dN8j5kWm6a9E1l3t7j3N/5mQf/AG7bG6W+3r2+eR5nQ6m8r3x0x9hT9W8qj1bB1c0M8m3nZ1r6Wj6+g4n9F8ZLz2U4M0v0n7fQe5/6hE5m7W0b2u1g4j3XnWj9V7q7cK2vGv8Azl0b7rj8l3w3mK7m1F4z0dU+v8AQ4+4T5l9v2m1m1m9X0fB+QvFfY8i6u1w7l6qXW1k3zQ7m0B7Q7QfH3FQW0bJj6Z3v+P6v+X1n4rXr9m1Gx2YzjL2w6t6x9Bqf8Ajz+8zVvFqk9bdc5n2mH5U6f6v0X8z3f0fP7h4r2a7m7Y7uH0kqf6Vqv1n+kv8AyY7t3m2m6m2m1h7g7uI9j5VY9r9Pz4T/ANXqf8A0if/ACj6d7b7y1Zs2v6sdbQ6Z3l7Y3xv8ApN+Qf4r0l0rjU7tQ2mN7R2l2Rj3fY8fM3K9L7P5dN4t5s7xG1s3bQ7x3v2x9T+K6f6n1Ww9M2h1b2s7j7Y5H+qH+qv7V+Y3V7s+1WwzM8aWkN7gH2dQ6f1F5z6m7L7a+3W2yD3aS3e8Gf7l9v5mWcT3q8M7e7mO7i+muqtF9JX0k3u3b3B9vY+QvK6b1L0zV7G0V7a7P8A7Q8wP4rZ+o9WsPW9m7R7W1P2m9b6g8fQf4r0m+q+f8AQb7r9q6qf8AtzP5Kxv2j6t4y7bW8Y2s7j8k+0Wv9R+P8AkS+Tqkz+1wz7n7W2xY+z2P8Atb8l8e3L3m2
+<a href="pc-gamer.html">
+<div class="card">
+<img src="https://i.imgur.com/4M34hi2.jpg">
+</div>
+</a>
+
+<a href="pc-bureautique.html">
+<div class="card">
+<img src="https://i.imgur.com/jl1Jv0U.jpg">
+</div>
+</a>
+
+<a href="peripheriques.html">
+<div class="card">
+<img src="https://i.imgur.com/8ohC1Yy.jpg">
+</div>
+</a>
+
+</div>
+
+<div class="footer">
+Jonathan PC Service - Geek'Nexus
+</div>
+
+</body>
+</html>
